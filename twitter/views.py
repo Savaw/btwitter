@@ -18,7 +18,7 @@ def signup(request):
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
-            messages.success(request, f"new account created: {username}")
+            # messages.success(request, f"new account created: {username}")
             login(request, user)
             return redirect('tweet_list')
     else:
@@ -35,10 +35,11 @@ def login_request(request):
             user = authenticate(username=username, password=raw_password)
             if user is not None:
                 login(request, user)
-                messages.success(request, f"You are logged in as {username}")
+                # messages.success(request, f"You are logged in as {username}")
                 return redirect('tweet_list')
         else:
-            messages.error(request, "invalid username or password")
+            pass
+            # messages.error(request, "invalid username or password")
     else:
         form = AuthenticationForm()
     return render(request, 'twitter/login.html', {'form': form})
