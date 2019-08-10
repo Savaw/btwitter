@@ -1,0 +1,47 @@
+{% load static %}
+
+<html>
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Beth+Ellen|Lacquer|Open+Sans+Condensed:300|Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/twitter.css' %}">
+
+    <title> bTwitter </title>
+</head>
+<body>
+
+        <a href="/"> Home </a>
+        {% if user.is_authenticated %}
+           | <a href="/logout/"> Logout </a>
+        {% else %}
+            | <a href="/login/"> Login </a>
+            | <a href="/signup/"> Sign Up </a>
+        {% endif %}
+
+        <div class="page-header2">
+        <a href="/">bTwitter</a>
+
+    </div>
+{##}
+{#        {%  if messages %}#}
+{#            {% for message in messages %}#}
+{#                <script>#}
+{#              todo#}
+{#                   </script>#}
+{#            {% endfor %}#}
+{#        {%  endif %}#}
+{##}
+
+    <div class="page-body">
+       <div class="row justify-content-md-center">
+            <div class="col-md-8">
+        {% block content%}
+
+        {% endblock %}
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

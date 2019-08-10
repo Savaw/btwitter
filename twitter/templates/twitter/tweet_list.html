@@ -1,34 +1,21 @@
-{% load static %}
+{% extends 'twitter/base.html' %}
 
-<html>
-<head>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Beth+Ellen|Lacquer|Open+Sans+Condensed:300|Quicksand&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/twitter.css' %}">
-
-    <title> bTwitter </title>
-</head>
-<body>
-    <div class="page-header2">
-        <a href="/">bTwitter</a>
-    </div>
-    <div class="page-body">
+{% block content %}
         {% for tweet in tweets %}
-            <div class="a-tweet">
-            <div class="author" style="display: inline-block; padding-right: 10px"> {{ tweet.author }} </div>
-            <div class="datetime" style="display: inline-block"> {{ tweet.published_date }} </div>
-            <div class="tweet"> {{ tweet.content|linebreaksbr }}</div>
-            {% if  tweet.parent_tweet != null %}
-                <div class="a-parent-tweet">
-                    <div class="author" style="display: inline-block; padding-right: 10px"> {{ tweet.parent_tweet.author }} </div>
-                    <div class="datetime" style="display: inline-block"> {{ tweet.parent_tweet.published_date }} </div>
-                    <div class="tweet"> {{ tweet.parent_tweet.content|linebreaksbr }}</div>
+                <div class="a-tweet panel panel-default panel-body">
+                    <span class="author"> {{ tweet.author }} </span>
+                    <span class="datetime"> {{ tweet.published_date }} </span>
+                    <div class="tweet"> {{ tweet.content|linebreaksbr }}</div>
+                    {% if  tweet.parent_tweet != null %}
+                        <br>
+                        <div class="a-parent-tweet panel panel-default panel-body">
+                            <span class="author"> {{ tweet.parent_tweet.author }} </span>
+                            <span class="datetime"> {{ tweet.parent_tweet.published_date }} </span>
+                            <div class="tweet"> {{ tweet.parent_tweet.content|linebreaksbr }}</div>
+                        </div>
+                    {% endif %}
+
                 </div>
-            {% endif %}
-            </div>
-            <br>
+                <br>
         {% endfor %}
-    </div>
-</body>
-</html>
+{% endblock %}
