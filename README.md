@@ -1,3 +1,3 @@
 ## bTwitter
 
-[btwitter](btwitter.pythonanywhere.com)
+[btwitter](https://btwitter.pythonanywhere.com)
