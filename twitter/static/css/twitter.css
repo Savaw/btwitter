@@ -34,3 +34,17 @@
 .a-parent-tweet{
     padding-left: 20px;
 }
+
+.nav-bar{
+    padding: 10px;
+    background-color: #003366;
+    color: white;
+}
+
+.nav-bar a{
+    color: white;
+}
+
+.nav-bar a:hover{
+    color: #79aec8;
+}

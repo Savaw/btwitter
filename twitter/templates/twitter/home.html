@@ -1,0 +1,15 @@
+{% extends 'twitter/base.html' %}
+
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+    {% endif %}
+    <br>
+    <br>
+
+    {% block list %}
+    {% endblock %}
+
+{% endblock %}
+

@@ -1,0 +1,13 @@
+{% extends 'twitter/base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <h2>New Tweet</h2>
+    <form method="POST" class="new-tweet">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Tweet!</button>
+    </form>
+    {% else %}
+        You need to login first.
+    {% endif %}
+{% endblock %}
