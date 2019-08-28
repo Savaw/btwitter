@@ -1,5 +1,4 @@
-#!/Users/Saba/PycharmProjects/btwitter/venv/bin/python
-
+#!/Users/Saba/Desktop/btwitter/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

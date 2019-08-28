@@ -1,4 +1,4 @@
-#!/Users/Saba/PycharmProjects/btwitter/venv/bin/python
+#!/Users/Saba/Desktop/btwitter/venv/bin/python
 from django.core import management
 
 if __name__ == "__main__":
