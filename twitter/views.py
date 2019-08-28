@@ -1,3 +1,8 @@
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from django.http import HttpResponse
+from .models import Tweet
+from rest_framework.decorators import api_view
 from django.shortcuts import render, redirect
 from .models import Tweet
 from django.utils import timezone
@@ -5,11 +10,23 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
 from .forms import TweetForm
+from .serializers import TweetSerializer
+from rest_framework import status
 
 
+@api_view(['GET', 'POST'])
 def tweet_list(request):
-    tweets = Tweet.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, 'twitter/tweet_list.html', {'tweets': tweets})
+    if request.method == 'GET':
+        tweets = Tweet.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+        serializer = TweetSerializer(tweets, many=True)
+        return Response(serializer.data)
+    if request.method == 'POST':
+        serializer = TweetSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.validated_data['published_date'] = timezone.now()
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(status=status.HTTP_404_NOT_FOUND)
 
 
 def new_tweet(request):
