@@ -1,4 +1,4 @@
 ## bTwitter
 
-[btwitter](https://btwitter.pythonanywhere.com)
+[btwitter](https://b-twitter.herokuapp.com)
 ^-^
