@@ -1,0 +1,50 @@
+
+.page-header2{
+    font-family: 'Lacquer', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+}
+
+.page-body{
+	font-family: 'Quicksand', sans-serif;
+    padding: 10px 20px 10px 20px;
+
+}
+.author{
+    color: #003366;
+    font-size: 20px;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.datetime{
+	color: #3875d7;
+    font-size: 10px;
+}
+
+.tweet{
+    font-size: 15px;
+
+}
+
+.a-tweet{
+}
+
+.a-parent-tweet{
+    padding-left: 20px;
+}
+
+.nav-bar{
+    padding: 10px;
+    background-color: #003366;
+    color: white;
+}
+
+.nav-bar a{
+    color: white;
+}
+
+.nav-bar a:hover{
+    color: #79aec8;
+}
