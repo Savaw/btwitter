@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'qi^lws+$=!yt%d#9&nsl2!^7a&%(^$bg83=@9(jiito8eo-q6u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'btwitter.pythonanywhere.com', 'b-twitter.herokuapp.com']
 
