@@ -14,7 +14,7 @@ gunicorn==20.0.0
 heroku==0.1.4
 httpie==1.0.2
 importlib-metadata==0.21
-Pillow==5.4.1
+Pillow==6.2.0
 psycopg2==2.8.3
 pushy==0.5.4
 sqlparse==0.3.0
